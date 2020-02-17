@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,13 +25,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
+        android:hint="@string/user_exam"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text"
-        app:layout_constraintTop_toTopOf="@+id/text"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="@+id/text" />
 
     <Button
         android:id="@+id/UserButton"
@@ -83,7 +84,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:hint="170.0"/>
 
     <EditText
         android:id="@+id/weight"
@@ -99,12 +101,14 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView3"
         android:importantForAutofill="no"
+        android:hint="60.0"
         />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/age"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -124,7 +128,8 @@
         app:layout_constraintEnd_toEndOf="@+id/weight"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/weight"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:hint="24"/>
 
     <RadioGroup
         android:id="@+id/Btngroup"
@@ -143,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="true"
             android:text="@string/mail" />
 
         <RadioButton

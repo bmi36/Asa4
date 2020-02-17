@@ -34,10 +34,10 @@ class ToolsFragment(private val content: Context, private val navView: Navigatio
         val prefs = content.getSharedPreferences("User", Context.MODE_PRIVATE)
         val checkId: Int = prefs.getInt("sex", R.id.maleradioBtn)
 
-        userName.setText(prefs.getString("name", "梅田ひろし"))
-        weight.setText(prefs.getString("weight", 60f.toString()))
-        high.setText(prefs.getString("height", 170f.toString()))
-        agetext.setText(prefs.getString("age", "34"))
+        userName.setText(prefs.getString("name", ""))
+        weight.setText(prefs.getString("weight", ""))
+        high.setText(prefs.getString("height", ""))
+        agetext.setText(prefs.getString("age", ""))
         Btngroup.check(checkId)
 
         UserButton.setOnClickListener {

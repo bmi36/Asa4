@@ -1,5 +1,6 @@
 package com.example.asaco2.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,12 +55,12 @@ class CalendarFragment(val calory: Int) : Fragment(), CoroutineScope {
             } ?: throw Exception("Invalid Activity")
             launch(Dispatchers.Default) {
                 val element = calendaredModel.getCalendar(id)
-                val step = stepModel.getDayEntity(id)
+                val step = activity?.getSharedPreferences("STEP", Context.MODE_PRIVATE)?.getInt(date,0)
                 if (element != null) {
                     if (element.isNotEmpty()) {
                         activity?.run {
                             supportFragmentManager.beginTransaction()
-                                .replace(include_frame.id, BottomSheetFragment(element, dateString,step.step,flg,calory))
+                                .replace(include_frame.id, BottomSheetFragment(element, dateString,step ?: 0,flg,calory))
                                 .commit()
                         }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Asaco2</string>
+    <string name="app_name">Asaco</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -45,12 +45,12 @@
     <string name="step">歩</string>
     <string name="camera">撮影</string>
     <string name="km">%skm</string>
-    <string name="shokai">正気設定</string>
+    <string name="shokai">初期設定</string>
     <string name="Error">入力してください</string>
     <string name="toast_shokika">初期設定をします</string>
-
-
-
+    <string name="cookNameText">料理名を入力して下さい</string>
+    <string name="user_exam">例：情報太郎</string>
+    <string name="CalText">kcal</string>
 
 
 </resources>

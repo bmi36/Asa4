@@ -39,7 +39,7 @@ import java.util.*
 
 
 const val CAMERA_REQUEST_CODE = 1
-const val HUNTER = "梅田ひろし"
+const val HUNTER = "名前がまだありません"
 
 
 class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
     var weight = 0.0
     var bind = false
     lateinit var stepService: StepService
-    val appBarConfiguration: AppBarConfiguration by lazy {
+    private val appBarConfiguration: AppBarConfiguration by lazy {
         AppBarConfiguration(
             setOf(
                 R.id.nav_calendar,
@@ -303,7 +303,7 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
         }
     }
 
-    private fun calgary() = (stepcount.let { 1.05 * (3 * hohaba * it) * weight } / 200000).toInt()
+    private fun calgary() = (stepcount.let { 1.05 * (3 * hohaba * it) * weight } / 20000).toInt()
 
     override fun onClick() {
         toolbar.title = getString(R.string.calendar)
@@ -319,8 +319,8 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
                 title = getString(R.string.shokai)
                 Toast.makeText(this, R.string.toast_shokika, Toast.LENGTH_LONG).show()
             }
-            hohaba = ((it.getString("height", "170")?.toDouble() ?: 0.0) * 0.45)
-            weight = it.getString("weight", "60")?.toDouble() ?: 0.0
+            hohaba = ((it.getString("height", "0")?.toDouble() ?: 0.0) * 0.45)
+            weight = it.getString("weight", "0")?.toDouble() ?: 0.0
 
             val intentService = Intent(this, StepService::class.java)
             startService(intentService)

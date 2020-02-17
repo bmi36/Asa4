@@ -56,30 +56,34 @@
         android:id="@+id/cooknametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:background="#00000000"
+        android:ems="10"
+        android:hint="@string/cookNameText"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="@+id/nameText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/caltext"
-        app:layout_constraintTop_toTopOf="@+id/nameText"
-        android:importantForAutofill="no"
-        android:hint="@string/errortext"/>
+        app:layout_constraintTop_toTopOf="@+id/nameText" />
 
     <EditText
         android:id="@+id/caltext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:ems="10"
         android:background="#00000000"
-        app:layout_constraintBottom_toBottomOf="@+id/caloryText"
-        app:layout_constraintStart_toEndOf="@+id/caloryText"
-        app:layout_constraintTop_toTopOf="@+id/caloryText"
+        android:ems="10"
+        android:hint="@string/CalText"
+        android:importantForAutofill="no"
         android:inputType="number"
-        android:hint="@string/errortext"
-        android:importantForAutofill="no" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/caloryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/caloryText"
+        app:layout_constraintTop_toTopOf="@+id/caloryText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
