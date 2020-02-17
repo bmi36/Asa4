@@ -122,12 +122,7 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
                     }
                     R.id.nav_gallery -> {
                         toolbar.title = getString(R.string.hosuu)
-                        action(
-                            GalleryFragment(
-                                initdatebase(), ,
-                                (hohaba * stepcount / 100000)
-                            )
-                        )
+                        action(GalleryFragment(initdatebase()))
                     }
                     R.id.nav_tools -> {
                         toolbar.title = getString(R.string.setting)
@@ -327,7 +322,7 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
             navView.getHeaderView(0).run {
                 bmiText.text = getString(R.string.bmi, it.getInt("bmi", 0).toString())
                 Cal.text = getString(R.string.calText, cookPrefs.getInt("calory", 0).toString())
-                barn.text = getString(R.string.barnText, calgary().toString())
+                barn.text = getString(R.string.barnText, calgary()/10.toString())
             }
         }
         super.onStart()

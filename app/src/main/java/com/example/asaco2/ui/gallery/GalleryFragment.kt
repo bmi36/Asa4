@@ -1,5 +1,6 @@
 package com.example.asaco2.ui.gallery
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +21,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.coroutines.CoroutineContext
 
-class GalleryFragment(private val stepcount: Int,private val hight: Int,private val weight: Int, private val dis: Double) : Fragment(),
+class GalleryFragment(private val stepcount: Int) : Fragment(),
 
     CoroutineScope {
 
@@ -35,18 +36,21 @@ class GalleryFragment(private val stepcount: Int,private val hight: Int,private 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[RoomViewModel::class.java]
+        val prefs = activity?.getSharedPreferences("User",Context.MODE_PRIVATE)
 
+        val hight = prefs?.getString("height","0")?.toDouble()?:0.0
+        val weight = prefs?.getString("weight","0.0")?.toDouble()?:0.0
+        viewModel = ViewModelProvider(this)[RoomViewModel::class.java]
         dayText.text = SimpleDateFormat("yyyy年M月d日", Locale.JAPAN).format(Calendar.getInstance().time)
-        val hohaba =(hight.toDouble() * 0.45)
-        val calory =(stepcount.let { 1.05 * (3 * hohaba * it) * weight } / 20000).toInt()
+        val hohaba =(hight * 0.45)
+        val calory =(stepcount.let { 1.05 * (3 * hohaba * it) * weight } / 200000).toInt()
+        val dis =(hohaba * stepcount / 100000)
+
         calory_text.text = getString(R.string.kcal,calory.toString())
         distance_text.text = getString(R.string.km,String.format("%.1f", dis))
         hosuu_text.text = stepcount.toString()
 
         listener(EnamDate.DAY)
-//        dayBtn.setOnClickListener { listener(EnamDate.DAY) }
-//        monthBtn.setOnClickListener { listener(EnamDate.MONTH) }
     }
 
     private fun listener(date: EnamDate) {

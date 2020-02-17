@@ -60,7 +60,7 @@ class CalendarFragment(val calory: Int) : Fragment(), CoroutineScope {
                     if (element.isNotEmpty()) {
                         activity?.run {
                             supportFragmentManager.beginTransaction()
-                                .replace(include_frame.id, BottomSheetFragment(element, dateString,step ?: 0,flg,calory))
+                                .replace(include_frame.id, BottomSheetFragment(element, dateString,step ?: 0,flg,calory/10))
                                 .commit()
                         }
 
