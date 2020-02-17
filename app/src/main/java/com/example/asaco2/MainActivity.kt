@@ -124,8 +124,7 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
                         toolbar.title = getString(R.string.hosuu)
                         action(
                             GalleryFragment(
-                                initdatebase(),
-                                (calgary()).toString(),
+                                initdatebase(), ,
                                 (hohaba * stepcount / 100000)
                             )
                         )

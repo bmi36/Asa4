@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.coroutines.CoroutineContext
 
-class GalleryFragment(private val stepcount: Int, private val calory: String, private val dis: Double) : Fragment(),
+class GalleryFragment(private val stepcount: Int,private val hight: Int,private val weight: Int, private val dis: Double) : Fragment(),
 
     CoroutineScope {
 
@@ -38,7 +38,9 @@ class GalleryFragment(private val stepcount: Int, private val calory: String, pr
         viewModel = ViewModelProvider(this)[RoomViewModel::class.java]
 
         dayText.text = SimpleDateFormat("yyyy年M月d日", Locale.JAPAN).format(Calendar.getInstance().time)
-        calory_text.text = getString(R.string.kcal,calory)
+        val hohaba =(hight.toDouble() * 0.45)
+        val calory =(stepcount.let { 1.05 * (3 * hohaba * it) * weight } / 20000).toInt()
+        calory_text.text = getString(R.string.kcal,calory.toString())
         distance_text.text = getString(R.string.km,String.format("%.1f", dis))
         hosuu_text.text = stepcount.toString()
 
