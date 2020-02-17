@@ -322,7 +322,7 @@ class MainActivity : AppCompatActivity(), ToolsFragment.FinishBtn {
             navView.getHeaderView(0).run {
                 bmiText.text = getString(R.string.bmi, it.getInt("bmi", 0).toString())
                 Cal.text = getString(R.string.calText, cookPrefs.getInt("calory", 0).toString())
-                barn.text = getString(R.string.barnText, calgary()/10.toString())
+                barn.text = getString(R.string.barnText, (calgary()/10).toString())
             }
         }
         super.onStart()

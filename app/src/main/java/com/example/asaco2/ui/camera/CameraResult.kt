@@ -43,6 +43,8 @@ class CameraResult : AppCompatActivity(), CoroutineScope {
                         supportFragmentManager.beginTransaction()
                             .replace(frame.id, ImageFileFragment())
                             .commit()
+
+                       Log.d"test", t.message)
                     }
 
                     override fun onResponse(call: Call<Cook>, response: Response<Cook>) {
